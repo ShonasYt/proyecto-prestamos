@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatalogosController; // <-- Importamos tu controlador
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+// Reemplazamos la ruta por defecto (welcome) por la tuya
+Route::get('/', [CatalogosController::class, "home"]);
+
+// Ruta para el catálogo de puestos
+Route::get("/catalogos/puestos", [CatalogosController::class, "puestosGet"]);
+
+//Ruta para el catálogo de Empleados
+Route::get ("/empleados",[CatalogosController::class, "empleadosGet"]);
+Route::get ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarGet"]);
+Route::post ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarPost"]);
+
