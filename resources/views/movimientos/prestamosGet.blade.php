@@ -24,7 +24,7 @@
                 <th scope="col">Saldo Actual</th>
                 <th scope="col">Fecha Solicitud</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Abonos</th>
             </tr>
         </thead>
         <tbody>

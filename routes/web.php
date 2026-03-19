@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatalogosController; // <-- Importamos tu controlador
+use App\Http\Controllers\MovimientosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::get ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarG
 Route::post ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarPost"]);
 
 // Prestamos
-Route::get("/movimientos/prestamos",              [CatalogosController::class, "prestamosGet"]);
-Route::get("/movimientos/prestamos/agregar",      [CatalogosController::class, "prestamosAgregarGet"]);
-Route::post("/movimientos/prestamos/agregar",     [CatalogosController::class, "prestamosAgregarPost"]);
-Route::get("/movimientos/prestamos/ver/{id}",     [CatalogosController::class, "prestamosVerGet"]);
+Route::get("/movimientos/prestamos",              [MovimientosController::class, "prestamosGet"]);
+Route::get("/movimientos/prestamos/agregar",      [MovimientosController::class, "prestamosAgregarGet"]);
+Route::post("/movimientos/prestamos/agregar",     [MovimientosController::class, "prestamosAgregarPost"]);
+Route::get("/movimientos/prestamos/ver/{id}",     [MovimientosController::class, "prestamosVerGet"]);
  

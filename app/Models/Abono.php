@@ -33,5 +33,5 @@ class Abono extends Model
         "saldo_pendiente"
     ];    
     
-
+    public $timestamps = false; // Agrega esta línea
 }
