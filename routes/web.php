@@ -20,3 +20,9 @@ Route::get ("/empleados",[CatalogosController::class, "empleadosGet"]);
 Route::get ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarGet"]);
 Route::post ("/empleados/agregar",[CatalogosController::class, "empleadosAgregarPost"]);
 
+// Prestamos
+Route::get("/movimientos/prestamos",              [CatalogosController::class, "prestamosGet"]);
+Route::get("/movimientos/prestamos/agregar",      [CatalogosController::class, "prestamosAgregarGet"]);
+Route::post("/movimientos/prestamos/agregar",     [CatalogosController::class, "prestamosAgregarPost"]);
+Route::get("/movimientos/prestamos/ver/{id}",     [CatalogosController::class, "prestamosVerGet"]);
+ 

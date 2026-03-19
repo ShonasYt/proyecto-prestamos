@@ -216,6 +216,7 @@ body {
     padding: .9rem 1.25rem !important;
     border-bottom: 1px solid var(--border) !important;
     border-top: none !important;
+    text-align: center !important;
 }
 
 .table tbody tr {
@@ -417,4 +418,367 @@ form .row:last-child {
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   HOME — ENCABEZADO
+   ========================================= */
+.home-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    animation: fadeUp .5s var(--ease) both;
+}
+.home-eyebrow {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: .3rem;
+}
+.home-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--ink);
+    margin: 0 0 .3rem;
+    line-height: 1.15;
+}
+.home-subtitle {
+    font-size: .875rem;
+    color: var(--ink-soft);
+    margin: 0;
+}
+.home-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .2rem;
+}
+.home-date #home-clock {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--ink);
+    line-height: 1;
+}
+.home-date #home-date-str {
+    font-size: .78rem;
+    color: var(--ink-faint);
+}
+
+/* =========================================
+   HOME — TARJETAS DE ESTADÍSTICAS
+   ========================================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp .5s .1s var(--ease) both;
+}
+.stat-card-home {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: box-shadow .2s, transform .2s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+.stat-card-home::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; right: -10px;
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: var(--card-color);
+    opacity: .06;
+}
+.stat-card-home:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.07);
+    transform: translateY(-2px);
+}
+.stat-card-icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.stat-card-icon svg { width: 22px; height: 22px; }
+.stat-card-body { min-width: 0; }
+.stat-card-label {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 .25rem;
+}
+.stat-card-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    color: var(--ink);
+    line-height: 1;
+    margin: 0 0 .2rem;
+}
+.stat-card-sub {
+    font-size: .72rem;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+/* =========================================
+   HOME — GRID INFERIOR
+   ========================================= */
+.home-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    animation: fadeUp .5s .2s var(--ease) both;
+}
+.home-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+.home-card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.home-card-title {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 .2rem;
+}
+.home-card-subtitle {
+    font-size: .78rem;
+    color: var(--ink-faint);
+    margin: 0;
+}
+
+/* Accesos rapidos */
+.quick-access-grid {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.quick-card {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+    padding: .75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    transition: background .18s, border-color .18s, transform .15s var(--ease);
+}
+.quick-card:hover {
+    background: var(--accent-lt);
+    border-color: #c7d2fe;
+    transform: translateX(4px);
+}
+.quick-icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.quick-icon svg { width: 17px; height: 17px; }
+.quick-label {
+    flex: 1;
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--ink);
+}
+.quick-arrow {
+    font-size: .875rem;
+    color: var(--ink-faint);
+    transition: color .18s;
+}
+.quick-card:hover .quick-arrow { color: var(--accent); }
+
+/* Actividad reciente */
+.activity-list {
+    padding: .75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.activity-info { flex: 1; min-width: 0; }
+.activity-name {
+    font-size: .875rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 .1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.activity-detail {
+    font-size: .75rem;
+    color: var(--ink-soft);
+    margin: 0;
+}
+.activity-date {
+    font-size: .72rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.activity-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    padding: 2.5rem 1rem;
+    color: var(--ink-faint);
+    font-size: .825rem;
+}
+.activity-empty svg { width: 36px; height: 36px; opacity: .4; }
+
+/* =========================================
+   PRÉSTAMOS — Estado badge
+   ========================================= */
+.estado-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .75rem;
+    border-radius: 99px;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.estado-activo  { background: #f0fdf4; color: #16a34a; }
+.estado-pagado  { background: #eff6ff; color: #2563eb; }
+.estado-vencido { background: #fff1f2; color: #dc2626; }
+
+/* Botón ver en tabla */
+.btn-accion {
+    display: inline-flex;
+    align-items: center;
+    padding: .3rem .85rem;
+    border-radius: 8px;
+    font-size: .78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .15s, transform .15s;
+}
+.btn-ver {
+    background: var(--accent-lt);
+    color: var(--accent);
+    border: 1px solid #c7d2fe;
+}
+.btn-ver:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   PRÉSTAMOS — Detalle / resumen cards
+   ========================================= */
+.prestamo-resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .75rem;
+    margin-bottom: 2rem;
+    animation: fadeUp .5s .1s var(--ease) both;
+}
+.resumen-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+.resumen-label {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+.resumen-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    line-height: 1.2;
+}
+.text-accent { color: var(--accent) !important; }
+
+.abonos-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin: 0;
+}
+
+/* Fila de abono ya pagado (saldo = 0) */
+.abono-pagado td {
+    color: var(--ink-faint) !important;
+    text-decoration: line-through;
+}
+
+/* =========================================
+   FORMULARIO — Preview cálculo
+   ========================================= */
+.preview-calc {
+    background: var(--accent-lt);
+    border: 1px solid #c7d2fe;
+    border-radius: 10px;
+    padding: .65rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    min-height: 44px;
+    justify-content: center;
+}
+.preview-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    line-height: 1;
+}
+.preview-sub {
+    font-size: .72rem;
+    color: var(--ink-faint);
+}
+
+/* Botón secundario (Volver) */
+.btn-secondary {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    padding: .65rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: .875rem !important;
+    color: var(--ink-soft) !important;
+    transition: background .18s, transform .15s !important;
+}
+.btn-secondary:hover {
+    background: var(--border) !important;
+    transform: translateY(-1px) !important;
 }
