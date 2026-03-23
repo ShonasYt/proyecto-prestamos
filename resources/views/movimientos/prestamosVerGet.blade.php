@@ -10,6 +10,12 @@
             <h1>Detalle del Préstamo #{{ $prestamo->id_prestamo }}</h1>
         </div>
         <div class="col-auto titlebar-commands">
+            @if($prestamo->estado == 'ACTIVO')
+                <a class="btn btn-primary"
+                href="{{ route('movimientos.abonosAgregarGet', $prestamo->id_prestamo) }}">
+                + Agregar Abono
+                </a>
+            @endif
             <a class="btn btn-secondary" href="{{ url('/movimientos/prestamos') }}">← Volver</a>
         </div>
     </div>
